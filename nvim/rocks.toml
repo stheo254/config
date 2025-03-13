@@ -1,0 +1,86 @@
+# This is your rocks.nvim plugins declaration file.
+# Here is a small yet pretty detailed example on how to use it:
+#
+# [plugins]
+# nvim-treesitter = "semver_version"  # e.g. "1.0.0"
+
+# List of non-Neovim rocks.
+# This includes things like `toml` or other lua packages.
+[rocks]
+
+# List of Neovim plugins to install alongside their versions.
+# If the plugin name contains a dot then you must add quotes to the key name!
+[plugins]
+"rocks.nvim" = "2.42.0" # rocks.nvim can also manage itself :D
+"rocks-git.nvim" = "2.5.1"
+"rocks-config.nvim" = "3.0.0"
+"rocks-lazy.nvim" = "1.1.1"
+"mason.nvim" = "1.10.0"
+"telescope.nvim" = "scm"
+"mason-lspconfig.nvim" = "1.31.0"
+nvim-lspconfig = "1.0.0"
+nvim-treesitter = "scm"
+"rocks-treesitter.nvim" = "1.2.0"
+nvim-cmp = "scm"
+cmp-nvim-lsp = "scm"
+luasnip = "2.3.0"
+"lspkind.nvim" = "scm"
+nvim-treesitter-context = "scm"
+"lazygit.nvim" = "scm"
+"plenary.nvim" = "scm"
+fugitive = {git = "tpope/vim-fugitive"}
+"lualine.nvim" = "scm"
+"tokyonight.nvim" = "4.9.0"
+"toggleterm.nvim" = "2.13.0"
+"trouble.nvim" = "3.6.0"
+
+[plugins.colorizer]
+git = "chrisbra/colorizer"
+rev = "afa8674fe7cc7634abc622e81b2444531846f2b5"
+
+[plugins.nvim-web-devicons]
+git = "kyazdani42/nvim-web-devicons"
+rev = "v0.99"
+
+[plugins.harpoon]
+git = "theprimeagen/harpoon"
+rev = "a84ab829eaf3678b586609888ef52f7779102263"
+branch = "harpoon2"
+
+[plugins."netrw.nvim"]
+git = "prichrd/netrw.nvim"
+rev = "90501c62b9b816ed3ed1e912ae9db9af5671a1b2"
+
+[plugins.undotree]
+git = "mbbill/undotree"
+rev = "78b5241191852ffa9bb5da5ff2ee033160798c3b"
+
+[plugins.nvim-nonicons]
+git = "yamatsum/nvim-nonicons"
+rev = "ceda07dc7339f35444b5f4c4016f76a9eb42ac16"
+
+[plugins.vim-prettier]
+git = "prettier/vim-prettier"
+rev = "1.0.0"
+
+[plugins."tfm.nvim"]
+git = "rolv-apneseth/tfm.nvim"
+rev = "fb0de2c96bf303216ac5d91ce9bdb7f430030f8b"
+
+
+
+
+[config]
+plugins_dir = "plugins/"
+auto_setup = true
+
+[bundles.lsp]
+items = [
+  "mason-lspconfig.nvim",
+  "mason.nvim",
+  "nvim-lspconfig",
+  "nvim-cmp",
+  "cmp-nvim-lsp",
+  "luasnip",
+  "lspkind.nvim"
+]

@@ -1,0 +1,57 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+// Sleek
+
+{
+"include": "~/.config/waybar/modules",
+"layer": "top",
+"position": "top",
+"height": 5,
+"margin-left": 10,
+"margin-right": 10,
+"margin-top": 2,
+	
+"modules-left": [
+	"hyprland/workspaces#numeral",
+	"custom/separator#line",
+	"tray",
+	"custom/separator#line",
+	"hyprland/window"
+],
+
+"modules-center": [		
+	"mpris",
+	"custom/separator#line",
+	"group/motherboard",
+	"custom/separator#line",
+	"group/audio",
+],
+		
+"modules-right": [
+  "bluetooth",
+	"custom/separator#line",
+  "custom/seperator#line",
+	"custom/weather",
+	"custom/separator#line",
+	"clock",
+	"custom/separator#line",
+  "custom/swaync",
+	"custom/separator#line",
+	"custom/power",					
+	],
+
+
+// Additional format / customize modules
+
+"custom/power": {
+	"format": " ",
+	"icon-size": 20,
+  "on-click": "wlogout -C $HOME/.config/wlogout/nova.css -l $HOME/.config/wlogout/layout -b 5 -B 400 -T 400",
+	"tooltip": false,
+},
+	
+"clock": {
+	//"format": "{:%I:%M %p - %d/%b}", //for AM/PM
+    "format": " {:%Y, %d %B, %A    %H:%M}", // 24H
+	"tooltip": false
+},
+}
