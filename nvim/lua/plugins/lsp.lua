@@ -139,6 +139,10 @@ cmp.setup({
       capabilities = capabilities,
       on_attach = lsp_attach,
     })
+    lspconfig.jdtls.setup({
+      capabilities = capabilities,
+      on_attach = lsp_attach,
+  })
 
     lspconfig.pylsp.setup({
       capabilities = capabilities,

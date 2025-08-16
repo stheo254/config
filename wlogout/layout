@@ -11,6 +11,12 @@
     "keybind" : "r"
 }
 {
+    "label" : "windowss",
+    "action" : "~/.config/wlogout/script/reboot-windows.sh ",
+    "text" : "Windows",
+    "keybind" : "w"
+}
+{
     "label" : "logout",
     "action" : "loginctl kill-session $XDG_SESSION_ID",
     "text" : "Logout",

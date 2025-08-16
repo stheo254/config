@@ -11,36 +11,36 @@
 # List of Neovim plugins to install alongside their versions.
 # If the plugin name contains a dot then you must add quotes to the key name!
 [plugins]
-"rocks.nvim" = "2.42.0" # rocks.nvim can also manage itself :D
-"rocks-git.nvim" = "2.5.1"
-"rocks-config.nvim" = "3.0.0"
-"rocks-lazy.nvim" = "1.1.1"
-"mason.nvim" = "1.10.0"
+"rocks.nvim" = "2.44.0"
+"rocks-git.nvim" = "2.5.3"
+"rocks-config.nvim" = "3.1.1"
+"rocks-lazy.nvim" = "1.2.0"
+"mason.nvim" = "2.0.0"
 "telescope.nvim" = "scm"
-"mason-lspconfig.nvim" = "1.31.0"
-nvim-lspconfig = "1.0.0"
+"mason-lspconfig.nvim" = "2.0.0"
+nvim-lspconfig = "2.1.0"
 nvim-treesitter = "scm"
-"rocks-treesitter.nvim" = "1.2.0"
+"rocks-treesitter.nvim" = "1.3.0"
 nvim-cmp = "scm"
 cmp-nvim-lsp = "scm"
-luasnip = "2.3.0"
+luasnip = "2.4.0"
 "lspkind.nvim" = "scm"
 nvim-treesitter-context = "scm"
 "lazygit.nvim" = "scm"
 "plenary.nvim" = "scm"
-fugitive = {git = "tpope/vim-fugitive"}
 "lualine.nvim" = "scm"
-"tokyonight.nvim" = "4.9.0"
-"toggleterm.nvim" = "2.13.0"
-"trouble.nvim" = "3.6.0"
+"tokyonight.nvim" = "4.11.0"
+"toggleterm.nvim" = "2.13.1"
+"trouble.nvim" = "3.7.1"
+nvim-web-devicons= "0.100"
+
+[plugins.fugitive ]
+git = "tpope/vim-fugitive"
+rev = "v3.7"
 
 [plugins.colorizer]
 git = "chrisbra/colorizer"
 rev = "afa8674fe7cc7634abc622e81b2444531846f2b5"
-
-[plugins.nvim-web-devicons]
-git = "kyazdani42/nvim-web-devicons"
-rev = "v0.99"
 
 [plugins.harpoon]
 git = "theprimeagen/harpoon"

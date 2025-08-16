@@ -60,6 +60,13 @@ button:hover {
   background-image: image(url("./icons/restart-hover.png"));
 }
 
+#windows {
+    background-image: image(url("./icons/restart.png"));
+}
+#windows:hover {
+  background-image: image(url("./icons/restart-hover.png"));
+}
+
 #lock {
     background-image: image(url("./icons/lock.png"));
 }
