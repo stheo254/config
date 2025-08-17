@@ -1,5 +1,5 @@
-local harpoon = require("harpoon")
-harpoon:setup()
+--local harpoon = require("harpoon")
+--harpoon:setup()
 
 -- basic telescope configuration
 -- local conf = require("telescope.config").values
@@ -20,18 +20,45 @@ harpoon:setup()
 -- end
 -- REQUIRED
 
-vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end, { desc = '[h]arpoon [a]dd' })
-vim.keymap.set("n", "<leader>he", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = '[h]arpoon [e]dit' })
--- vim.keymap.set("n", "<A-e>", function()
-  --   toggle_telescope(harpoon:list())
-  -- end,
-  -- { desc = "Open harpoon window" })
+--vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end, { desc = '[h]arpoon [a]dd' })
+--vim.keymap.set("n", "<leader>he", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = '[h]arpoon [e]dit' })
+---- vim.keymap.set("n", "<A-e>", function()
+--  --   toggle_telescope(harpoon:list())
+--  -- end,
+--  -- { desc = "Open harpoon window" })
+--
+--  vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
+--  vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end)
+--  vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end)
+--  vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
+--
+--  -- Toggle previous & next buffers stored within Harpoon list
+--  vim.keymap.set("n", "<A-p>", function() harpoon:list():prev() end)
+--  vim.keymap.set("n", "<A-n>", function() harpoon:list():next() end)
 
-  vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
-  vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end)
-  vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end)
-  vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
+return {
+  "ThePrimeagen/harpoon",
+  branch = "harpoon2",
+  dependencies = {"nvim-lua/plenary.nvim"},
+  config = function()
+    local harpoon = require("harpoon")
+    harpoon:setup()
 
-  -- Toggle previous & next buffers stored within Harpoon list
-  vim.keymap.set("n", "<A-p>", function() harpoon:list():prev() end)
-  vim.keymap.set("n", "<A-n>", function() harpoon:list():next() end)
+    vim.keymap.set("n", "<leader>ha", function() harpoon:list():add() end,
+                   {desc = '[h]arpoon [a]dd'})
+    vim.keymap.set("n", "<leader>he",
+                   function() harpoon.ui:toggle_quick_menu(harpoon:list()) end,
+                   {desc = '[h]arpoon [e]dit'})
+
+    vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
+    vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end)
+    vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end)
+    vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
+
+    -- Toggle previous & next buffers stored within Harpoon list
+    vim.keymap.set("n", "<leader>hp", function() harpoon:list():prev() end,
+                   {desc = '[h]arpoon [p]rev'})
+    vim.keymap.set("n", "<leader>hn", function() harpoon:list():next() end,
+                   {desc = '[h]arpoon [n]ext'})
+  end
+}

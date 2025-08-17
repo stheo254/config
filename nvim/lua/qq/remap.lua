@@ -2,7 +2,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 -- space p v as netrw hotkey
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 -- copy/paste to/from clipboard
 vim.keymap.set("n", "<leader>yy", "\"+y")
 vim.keymap.set("v", "<leader>yy", "\"+y")
