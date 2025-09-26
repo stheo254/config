@@ -6,7 +6,8 @@
 !i3
 !networkmanager-dmenu
 !openbox
-!quickshell
+!quickshell/
+!quickshell/**
 !rofi
 !yazi
 !swaync
