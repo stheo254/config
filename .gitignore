@@ -10,7 +10,8 @@
 !rofi
 !yazi
 !swaync
-!tmux*
+!tmux/
+!tmux/**
 !waybar
 !wlogout
 !.gitignore
