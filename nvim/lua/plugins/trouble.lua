@@ -63,5 +63,6 @@ return {
     vim.keymap.set("n", "<leader>tq", "<cmd>Trouble quickfix toggle focus=true follow=true<CR>")
     vim.keymap.set("n", "<leader>tl", "<cmd>Trouble lsp toggle focus=true follow=true<CR>")
     vim.keymap.set("n", "<leader>tr", "<cmd>Trouble lsp_references toggle focus=true follow=true<CR>")
+    require("trouble").setup()
   end
 }

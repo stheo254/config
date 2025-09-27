@@ -68,6 +68,7 @@ return{
           vtsls = {},
           jdtls = {},
           hyprls = {},
+          qmlls = { cmd = {"qmlls", "-E"}, root_markers = {".qmlls.ini"}},
           rust_analyzer = {
             settings = {
               diagnostics = { disabled = { "unlinked-file" } },

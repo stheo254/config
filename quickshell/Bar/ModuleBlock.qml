@@ -17,7 +17,7 @@ RowLayout {
     Layout.preferredWidth: moduleRow.width + root.extraWidth
     Layout.preferredHeight: 32
     implicitHeight: 32
-    radius: 5
+    radius:10 
     color: Theme.barBgColour
     border {
       color: Theme.borderColour

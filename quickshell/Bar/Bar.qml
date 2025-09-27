@@ -30,45 +30,45 @@ Scope {
       implicitHeight: 30
 
       RowLayout{
-        id:parentBlock
-        anchors.fill: parent
-        spacing: 0
-        RowLayout{
-          id:leftBlock
-          width: 100
-          spacing: 4
-          Layout.alignment: Qt.AlignLeft
-          Layout.fillWidth: true
-          ModuleBlock{
-            height: parent.implicitHeight
-            anchors.centerIn: parent
-            width: 400
-            spacing: 0
-            Repeater{
-              id: ws
-              model: Hyprland.workspaces.values
-              Text{
-                anchors.centerIn: parent
-                text: "test"
-              }
-            }
+        id:leftBlock
+        width: 5 
+        spacing: 4
+        anchors.left : parent.left
+
+        ModuleBlock{
+          height: parent.implicitHeight
+          spacing: 0
+          Repeater{
+            id: ws
+            model: HyprUtils.workspaces
+            Workspace{}
+          }
+          Text{
+            id:test2
+            text:"||"
           }
         }
+      }
 
-        RowLayout{
-          id: rightBlock
-          spacing: 4
-          Layout.alignment: Qt.AlignRight
-          Layout.fillWidth: true
-          ClockWidget {
-            anchors.right: parent.right
-            anchors.verticalCenter: parent.verticalCenter
-
-            // no more time binding
+      RowLayout{
+        id: rightBlock
+        spacing:2 
+        anchors.right : parent.right
+        anchors.verticalCenter : parent.verticalCenter
+        ModuleBlock{
+          height: parent.implicitHeight
+          spacing: 0
+          ClockWidget {}
+        }
+        ModuleBlock{
+          height: parent.implicitHeight
+          spacing: 0
+          Text{
+            id:test
+            text: "󰎟"
           }
         }
       }
     }
-
   }
 }
