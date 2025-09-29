@@ -3,8 +3,12 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell.Hyprland
 
+import qs
+
 Item{
   property bool hoverWs : false
+  property var defaultWs : [1,2,3,4,5,6]
+  property var focused : Hyprland.focusedWorkspace
     width: 20
     height: 20
     
@@ -12,17 +16,20 @@ Item{
     anchors.centerIn: parent
     width: parent.width
     height: parent.height
-    radius: 10 
-    color: modelData.focused || hoverWs ? "gray" : "transparent"  // Highlight active workspace
+  radius: 10 
+  color: focused.id == modelData || hoverWs ? "#9e631e" : "transparent"  // Highlight active workspace
 
     Behavior on color {
             ColorAnimation { duration: 150 }
     }
     Text {
       anchors.centerIn: parent
-      text: modelData.id || index + 1  // Use workspace ID or index
-      color: "Black"
-      font.pixelSize: 10
+      text: {
+        return modelData
+      }
+      color: ThemeItem.workspaceNoColour
+      font.pixelSize: 11
+
     }
     MouseArea{
       id:mouseAreaWs
@@ -30,7 +37,7 @@ Item{
       height: parent.height
       hoverEnabled: true
       onClicked:{
-        HyprUtils.switchWs(modelData.id);
+        HyprUtils.switchWs(modelData);
       }
       onEntered:{
         hoverWs = true 

@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 // import Quickshell.Hyprland
+import qs
 
 
 RowLayout {
@@ -8,6 +9,9 @@ RowLayout {
   // property HyprlandMonitor monitor: Hyprland.monitorFor(screen)
   property int extraWidth: 16
   property int spacing: 8
+  property int margin: 0
+  property int leftMargin:0
+  property int rightMargin: 0
   default required property list<Item> items
 
   signal specialWidthChanged
@@ -15,15 +19,15 @@ RowLayout {
   Rectangle {
     id: moduleRect
     Layout.preferredWidth: moduleRow.width + root.extraWidth
-    Layout.preferredHeight: 32
-    implicitHeight: 32
+    Layout.preferredHeight:24 
+    Layout.margins: root.margin 
+    Layout.leftMargin: root.leftMargin
+    Layout.rightMargin: root.rightMargin
+    implicitHeight:24 
     radius:10 
-    color: Theme.barBgColour
-    border {
-      color: Theme.borderColour
-      width: 2
-    }
+    color: ThemeItem.barScndBgColour
     opacity: 0.85
+
 
     RowLayout {
       id: moduleRow
