@@ -151,7 +151,7 @@ return{
             server.capabilities = capabilities
           end
           server.on_attach = lsp_attach
-          server.root_markers = { ".git" }
+          server.root_markers = server.root_markers or {".git"}
           vim.lsp.enable(server_name)
           vim.lsp.config(server_name, server)
         end

@@ -6,6 +6,8 @@ Singleton {
 
   property string barBgColour: "#00060f"
   property string barScndBgColour: "#0e1826" 
+  property string mediaColour: "#f9fbf2"
+  property string media2ndColour:  "#afcbff"
 //  property string borderColour: theme.brightBlack
 
 //  property string workspaceActive: theme.magenta

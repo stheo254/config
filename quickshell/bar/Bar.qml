@@ -4,7 +4,9 @@ import QtQuick
 import QtQuick.Layouts
 import Quickshell.Hyprland
 import Quickshell.Services.Mpris
+import Quickshell.Services.Pipewire
 import qs
+import qs.bar.utils
 
 Scope {
   // no more time object
@@ -45,7 +47,6 @@ Scope {
           anchors.left : parent.left
 
           ModuleBlock{
-            height: parent.implicitHeight
             spacing:0
             margin: 3
             leftMargin:10 
@@ -67,12 +68,14 @@ Scope {
             }
           }
           ModuleBlock{
-            height: parent.implicitHeight
-            spacing: 0
-            Text{
-              text:"xd"
+            spacing: 1
+            Repeater{
+              id:systrayRepeater
+              model:SystrayUtils.systray
+              Systemtray{}
             }
           }
+
         }
 
         RowLayout{
@@ -82,7 +85,21 @@ Scope {
           ModuleBlock{
             margin:3
 
+            SpeakerVol{
+              node: Pipewire.defaultAudioSink
+            }
+          }
+          ModuleBlock{
+            margin:3
+
             MediaBar{}
+          }
+          ModuleBlock{
+            margin:3
+
+            SpeakerVol{
+              node: Pipewire.defaultAudioSource
+            }
           }
         }
         RowLayout{

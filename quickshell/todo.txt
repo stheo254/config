@@ -1,0 +1,13 @@
+systray | left  | -> right of ws
+volume and mic | middle | (slider?? or just circular widget) left and right of mediabar
+media controller | middle| hover of spotify mediabar
+weather | right | right of calender
+popup | right| right of calender | click pops up sysinfo like end-4
+windows in ws? | right | left of calender| kyk sam
+sysinfo{
+  calender at btm
+  bluetooth control
+  audio sink control
+  powermenu
+  network=????
+}
