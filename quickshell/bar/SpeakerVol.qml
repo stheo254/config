@@ -65,6 +65,19 @@ Item{
     onExited: function () {
       audioTooltip.deactivateTooltip();
     }
+    onWheel: function(event) {
+      const default_sink = node;
+      if (!default_sink) {
+        return;
+      }
+      if (event.angleDelta.y > 0) {
+        default_sink.audio.muted = false;
+        default_sink.audio.volume += 0.05;
+      } else if (event.angleDelta.y < 0) {
+        default_sink.audio.muted = false;
+        default_sink.audio.volume -= 0.05;
+      }
+    }
   }
 
   Tooltip{

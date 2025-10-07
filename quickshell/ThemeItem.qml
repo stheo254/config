@@ -4,21 +4,26 @@ import Quickshell
 
 Singleton {
 
-  property string barBgColour: "#00060f"
-  property string barScndBgColour: "#0e1826" 
-  property string mediaColour: "#f9fbf2"
-  property string media2ndColour:  "#afcbff"
+  property string barBgColour: "#11111b"
+  property string barScndBgColour: "#1e1e2e" 
+  property string mediaColour: "#fab387"
+  property string media2ndColour:  "#f38ba8"
+  property string mediaControlColour: "#0e1826"
 //  property string borderColour: theme.brightBlack
-
+    property string text: "#cdd6f4"
+    property string textHighlighted: "#181825"
+  
 //  property string workspaceActive: theme.magenta
 //  property string workspaceFilled: theme.foreground
 //  property string workspaceEmpty: theme.brightBlack
 //  property string workspaceHovered: theme.blue
-    property string workspaceNoColour: "#9ec4f7"
+    property string workspaceNoColour: "#fab387"
+    property string workspaceFocused: "#cba6f7"
+    
 //
 //  // property string logoColour: "#1793d0" // classic arch linux logo colour
 //  property string logoColour: theme.blue
-  property string timeColour: "#9ec4f7"
+  property string timeColour: "#fab387"
 //  property string dateColour: theme.yellow
 //  property string windowTitleColour: theme.foreground
 //

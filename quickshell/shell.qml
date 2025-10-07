@@ -5,4 +5,8 @@ import qs.bar
 
 Scope {
   Bar {}
+  LazyLoader{
+    loading: true
+    MediaControls{}
+  }
 }

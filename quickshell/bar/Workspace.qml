@@ -17,7 +17,7 @@ Item{
     width: parent.width
     height: parent.height
     radius: 10 
-    color: focused.id == modelData || mouseAreaWs.containsMouse ? "#9e631e" : "transparent"  // Highlight active workspace
+    color: focused.id == modelData || mouseAreaWs.containsMouse ? ThemeItem.workspaceFocused: "transparent"  // Highlight active workspace
 
     Behavior on color {
             ColorAnimation { duration: 150 }
@@ -27,8 +27,9 @@ Item{
       text: {
         return modelData
       }
-      color: ThemeItem.workspaceNoColour
+      color: focused.id == modelData || mouseAreaWs.containsMouse ? ThemeItem.textHighlighted : ThemeItem.workspaceNoColour
       font.pixelSize: 11
+      font.bold: true
 
     }
     MouseArea{

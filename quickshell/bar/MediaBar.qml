@@ -15,11 +15,6 @@ Item{
   //if nothing is playing show "no songs plying"
   //plans: if hovered open a media controller
   //
-  PwObjectTracker{
-    objects: [...Pipewire.nodes.values].filter(v => {
-      return v.isSink;
-    })
-  }
   implicitWidth: spotifyTitles.implicitWidth + 40
   implicitHeight: spotifyTitles.implicitHeight
   Text{
@@ -35,24 +30,24 @@ Item{
       height: parent.height
       hoverEnabled: true
       cursorShape: Qt.PointingHandCursor
-      acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton
+      acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MiddleButton | Qt.BackButton | Qt.ForwardButton
       onClicked:(mouse) => {
         if(MediaUtils.spotifyPlayer == null){
           return
         }
         if (mouse.button == Qt.LeftButton){
-          MediaUtils.spotifyPlayer.previous()
-        }else if( mouse.button == Qt.RightButton){
+          GlobalStates.showMedia = !GlobalStates.showMedia
+        }else if( mouse.button == Qt.ForwardButton){
           MediaUtils.spotifyPlayer.next()
+        }else if( mouse.button == Qt.BackButton){
+          MediaUtils.spotifyPlayer.previous()
         }else if( mouse.button == Qt.MiddleButton){
           MediaUtils.spotifyPlayer.togglePlaying()
         }
       }
       onEntered:{
-
-        let x = Pipewire.defaultAudioSink
-        console.log(x.description)
-        console.log(x.audio.volume)
+        console.log(MediaUtils.media.map((x) => {return [x.uniqueId, x.trackTitle, x.trackArtUrl]}))
+        console.log(MediaUtils.media[0].trackArtUrl == "")
         // for(var y of x){
         //   console.log("start of loop " + y.description)
         //   console.log(y.name)

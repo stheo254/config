@@ -47,7 +47,7 @@ Scope {
           anchors.left : parent.left
 
           ModuleBlock{
-            spacing:0
+            spacing:5
             margin: 3
             leftMargin:10 
             Repeater{
@@ -108,7 +108,7 @@ Scope {
           anchors.right : parent.right
           ModuleBlock{
             height: parent.implicitHeight
-            spacing: 0
+            spacing: GlobalStates.xd
             margin:3
             rightMargin:10
             
