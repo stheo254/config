@@ -4,7 +4,6 @@
 
 # API settings ________________________________________________________________
 
-APIKEY="https://api.openweathermap.org/data/2.5/weather?lat=52.50&lon=13.405&appid=a3adfd51c42a260132f430c86d519edf"
 ## if you leave these empty location will be picked based on your ip-adres
 
 CITY_NAME='Berlin'
